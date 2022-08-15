@@ -1,4 +1,4 @@
-# Fig pre block. Keep at the top of this file.
+#cd code/top-seller//gerencie-frontend/ Fig pre block. Keep at the top of this file.
 [[ -f "$HOME/.fig/shell/zshrc.pre.zsh" ]] && . "$HOME/.fig/shell/zshrc.pre.zsh"
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
 # Initialization code that may require console input (password prompts, [y/n]
@@ -80,8 +80,8 @@ ZSH_THEME="robbyrussell"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git)
-
+plugins=(git web-search copyfile copybuffer dirhistory)
+ 
 source $ZSH/oh-my-zsh.sh
 
 # User configuration
@@ -110,6 +110,10 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 alias vim="nvim"
+alias gc="git commit"
+alias gaa="git add ."
+alias gp="git push"
+
 
 SPACESHIP_PROMPT_ORDER=(
 #  user          # Username section
