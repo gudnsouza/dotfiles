@@ -111,9 +111,9 @@ source $ZSH/oh-my-zsh.sh
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 alias vim="nvim"
 alias gc="git commit"
-alias gaa="git add ."
+alias ga="git add ."
 alias gp="git push"
-
+alias src="source ~/.zshrc"
 
 SPACESHIP_PROMPT_ORDER=(
 #  user          # Username section
