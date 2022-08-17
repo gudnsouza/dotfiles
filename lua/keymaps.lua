@@ -10,10 +10,10 @@ keymap.set('n', '-', '<C-x>', opts)
 keymap.set('n', '<C-a>', 'gg<S-v>G', opts)
 
 -- New tab
-keymap.set('n', 'te', ':tabedit<Return>', opts)
+keymap.set('n', 'te', ':tabedit<CR>', opts)
 -- Split window
-keymap.set('n', 'ss', ':split<Return><C-w>w', opts)
-keymap.set('n', 'sv', ':vsplit<Return><C-w>w', opts)
+keymap.set('n', 'ss', ':split<CR><C-w>w', opts)
+keymap.set('n', 'sv', ':vsplit<CR><C-w>w', opts)
 -- Move window
 keymap.set('n', '<Space>', '<C-w>w', opts)
 keymap.set('', 's<left>', '<C-w>h', opts)
@@ -43,12 +43,12 @@ keymap.set('n', '<leader>e', ":NvimTreeToggle<cr>", opts)
 keymap.set('n', 'yy', "<S-v>y", opts)
 
 -- Closing buffers and vim
-keymap.set('n', '<leader>c', ":bd<Return>", opts)
-keymap.set('n', '<leader>q', ":qa<Return>", opts)
+keymap.set('n', '<leader>c', ":bd<CR>", opts)
+keymap.set('n', '<leader>q', ":qa<CR>", opts)
 
 -- Saving on insert mode
-keymap.set('n', '<C-s>', ':w<Return>', opts)
-keymap.set('i', '<C-s>', '<Esc>:w<Return>', opts)
+keymap.set('n', '<C-s>', ':w<CR>', opts)
+keymap.set('i', '<C-s>', '<Esc>:w<CR>', opts)
 
 -- Telescope projects
 keymap.set('n', "<leader><S-p>", ":Telescope projects<CR>", opts)
