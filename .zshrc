@@ -114,6 +114,9 @@ alias gc="git commit"
 alias ga="git add ."
 alias gp="git push"
 alias src="source ~/.zshrc"
+alias gtv="cd ~/.config/nvim"
+alias gts="cd ~/code/satori"
+alias gtt="cd ~/code/top-seller"
 
 SPACESHIP_PROMPT_ORDER=(
 #  user          # Username section
