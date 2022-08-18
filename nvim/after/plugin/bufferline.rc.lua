@@ -2,11 +2,6 @@ local status, bufferline = pcall(require, "bufferline")
 if (not status) then return end
 
 bufferline.setup({
-  active = true,
-  on_config_done = nil,
-  keymap = {
-    normal_mode = {},
-  },
   highlights = {
     -- separator = { guifg = '#073642', guibg = '#002b36', }, separator_selected = { guifg = '#073642', },
     -- background = { guifg = '#657b83', guibg = '#002b36' },
@@ -15,6 +10,10 @@ bufferline.setup({
     -- fill = { guibg = '#073642' }
   },
   options = {
+  active = true,
+  keymap = {
+    normal_mode = {},
+  },
     show_buffer_close_icons = false,
     show_close_icon = false,
     -- sort_by = 'insert_after_current',
