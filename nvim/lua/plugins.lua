@@ -18,7 +18,6 @@ packer.startup({ function(use)
   use 'wbthomason/packer.nvim' -- Plugin manager
   use 'hoob3rt/lualine.nvim' --Statusline use 'onsails/lspkind-nvim' -- vscode-like pictograms
   use 'hrsh7th/cmp-buffer' -- nvim-cmp source for buffer words
-
   use 'L3MON4D3/LuaSnip'
   use 'hrsh7th/cmp-nvim-lsp' -- nvim-cmp source for neovim's built-in LSP
   use 'hrsh7th/nvim-cmp'
@@ -50,26 +49,26 @@ packer.startup({ function(use)
       require('Comment').setup()
     end
   } -- Commenting
-  use 'github/copilot.vim'
+  -- use 'github/copilot.vim'
   use { 'saadparwaiz1/cmp_luasnip' }
-  use {
-    "zbirenbaum/copilot.lua",
-    event = { "VimEnter" },
-    config = function()
-      vim.defer_fn(function()
-        require("copilot").setup({
-          cmp = {
-            enabled = true,
-            method = "getCompletionsCycling",
-          }
-        })
-      end, 100)
-    end,
-  } -- Lua engine for copilot
-  use {
-    "zbirenbaum/copilot-cmp",
-    module = "copilot_cmp",
-  } -- Make copilot suggestions appear on nvim-vmp
+  -- use {
+  --   "zbirenbaum/copilot.lua",
+  --   event = { "VimEnter" },
+  --   config = function()
+  --     vim.defer_fn(function()
+  --       require("copilot").setup({
+  --         cmp = {
+  --           enabled = true,
+  --           method = "getCompletionsCycling",
+  --         }
+  --       })
+  --     end, 100)
+  --   end,
+  -- } -- Lua engine for copilot
+  -- use {
+  --   "zbirenbaum/copilot-cmp",
+  --   module = "copilot_cmp",
+  -- } -- Make copilot suggestions appear on nvim-vmp
   use 'jose-elias-alvarez/null-ls.nvim'
   use 'kabouzeid/nvim-lspinstall'
   use 'nvim-lua/plenary.nvim' -- Common lua utilities
@@ -82,8 +81,11 @@ packer.startup({ function(use)
     requires = { 'tjdevries/colorbuddy.nvim' }
   } -- Takuya's favorite colorscheme
   use 'gruvbox-community/gruvbox' -- Gruvbox colorscheme
-  use "rafamadriz/friendly-snippets"
+  use {
+    "rafamadriz/friendly-snippets",
+    commit = "b2446100d9f6609526cf1839b4ce3dc1ff07ada0"
 
+  }
   use {
     'kyazdani42/nvim-tree.lua',
     requires = {

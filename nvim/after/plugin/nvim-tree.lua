@@ -3,6 +3,7 @@ if not status then
   return
 end
 
+
 nvim_tree.setup({
 
   disable_netrw = true,
@@ -24,7 +25,8 @@ nvim_tree.setup({
   },
   open_on_tab = false,
   hijack_cursor = false,
-  update_cwd = false,
+  update_cwd = true,
+  respect_buf_cwd = true,
   diagnostics = {
     enable = true,
     show_on_dirs = false,
@@ -38,7 +40,6 @@ nvim_tree.setup({
   update_focused_file = {
     enable = true,
     update_cwd = true,
-    ignore_list = {},
   },
   system_open = {
     cmd = nil,

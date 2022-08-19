@@ -54,17 +54,6 @@ vim.cmd([[colorscheme gruvbox]])
 vim.api.nvim_command("set confirm");
 vim.api.nvim_command("setlocal formatoptions-=c formatoptions-=r formatoptions-=o");
 
-local function headless()
-  vim.opt.shortmess = "" -- try to prevent echom from cutting messages off or prompting
-  vim.opt.more = false -- don't pause listing when screen is filled
-  vim.opt.cmdheight = 9999 -- helps avoiding |hit-enter| prompts.
-  vim.opt.columns = 9999 -- set the widest screen possible
-  vim.opt.swapfile = false -- don't use a swap file
-end
-
-if #vim.api.nvim_list_uis() == 0 then
-  headless()
-end
 
 vim.opt.shortmess:append "c" -- don't show redundant messages from ins-completion-menu
 vim.opt.shortmess:append "I" -- don't show the default intro message

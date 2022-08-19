@@ -1,10 +1,12 @@
 local keymap = vim.keymap
 local opts = { silent = true, noremap = true };
+
 -- Do not yank with X
 keymap.set('n', 'x', '"_x', opts)
 -- Increment/decrement
 keymap.set('n', '+', '<C-a>', opts)
 keymap.set('n', '-', '<C-x>', opts)
+keymap.set({ 'n', 'v' }, '$', 'g_', { desc = 'Better $, behaves as expected' })
 
 -- Select all
 keymap.set('n', '<C-a>', 'gg<S-v>G', opts)
@@ -40,7 +42,6 @@ keymap.set('n', '<C-w><down>', '<C-w>-', opts)
 keymap.set('n', '<leader>e', ":NvimTreeToggle<cr>", opts)
 
 -- Yanking whole line
-keymap.set('n', 'yy', "<S-v>y", opts)
 
 -- Closing buffers and vim
 keymap.set('n', '<leader>c', ":bd<Return>", opts)
@@ -62,7 +63,6 @@ keymap.set('n', "<leader>bl", ":BufferLineCloseRight<CR>", opts)
 keymap.set("n", '<leader>/', "<ESC><CMD>lua require('Comment.api').toggle_linewise_op()<CR>", opts)
 keymap.set("v", '<leader>/', "<ESC><CMD>lua require('Comment.api').toggle_linewise_op(vim.fn.visualmode())<CR>", opts)
 
-keymap.set("n", "gs", vim.lsp.buf.signature_help, opts)
 keymap.set("n", "<leader>lr", vim.lsp.buf.rename, opts)
 keymap.set("n", "<C-j>", vim.diagnostic.goto_next, opts)
 keymap.set("n", "<C-k>", vim.diagnostic.goto_prev, opts)
