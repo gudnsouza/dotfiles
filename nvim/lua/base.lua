@@ -16,6 +16,7 @@ vim.opt.laststatus = 2
 vim.opt.expandtab = true
 vim.opt.undofile = true
 vim.opt.scrolloff = 10
+vim.opt.confirm = false
 vim.opt.backupskip = '/tmp/*,/private/tmp/*'
 vim.opt.inccommand = 'split'
 vim.opt.ignorecase = true
@@ -51,7 +52,6 @@ vim.api.nvim_create_autocmd("InsertLeave", {
 
 vim.cmd([[colorscheme gruvbox]])
 
-vim.api.nvim_command("set confirm");
 vim.api.nvim_command("setlocal formatoptions-=c formatoptions-=r formatoptions-=o");
 
 
