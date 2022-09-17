@@ -5,7 +5,6 @@ end
 
 
 nvim_tree.setup({
-
   disable_netrw = true,
   hijack_netrw = true,
   open_on_setup = false,
@@ -25,8 +24,7 @@ nvim_tree.setup({
   },
   open_on_tab = false,
   hijack_cursor = false,
-  update_cwd = true,
-  respect_buf_cwd = true,
+  update_cwd = false,
   diagnostics = {
     enable = true,
     show_on_dirs = false,

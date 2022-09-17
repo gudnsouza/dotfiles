@@ -11,7 +11,7 @@ vim.opt.autoindent = true
 vim.opt.hlsearch = false
 vim.opt.backup = false
 vim.opt.showcmd = true
-vim.opt.cmdheight = 1
+vim.opt.cmdheight = 2
 vim.opt.laststatus = 2
 vim.opt.expandtab = true
 vim.opt.undofile = true
@@ -57,7 +57,5 @@ vim.api.nvim_command("setlocal formatoptions-=c formatoptions-=r formatoptions-=
 
 vim.opt.shortmess:append "c" -- don't show redundant messages from ins-completion-menu
 vim.opt.shortmess:append "I" -- don't show the default intro message
-vim.opt.shortmess:append "a" -- don't show the default intro message
-vim.opt.cmdheight = 2
 vim.opt.whichwrap:append "<,>,[,],h,l"
 vim.opt.formatoptions:append { 'r' }
