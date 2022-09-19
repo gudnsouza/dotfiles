@@ -8,6 +8,7 @@ nvim_tree.setup({
   disable_netrw = true,
   hijack_netrw = true,
   open_on_setup = false,
+  respect_buf_cwd = true,
   open_on_setup_file = false,
   sort_by = "name",
   ignore_buffer_on_setup = false,
@@ -24,7 +25,6 @@ nvim_tree.setup({
   },
   open_on_tab = false,
   hijack_cursor = false,
-  update_cwd = false,
   diagnostics = {
     enable = true,
     show_on_dirs = false,
@@ -35,10 +35,10 @@ nvim_tree.setup({
       error = "",
     },
   },
-  update_focused_file = {
-    enable = true,
-    update_cwd = true,
-  },
+  -- update_focused_file = {
+  --   enable = true,
+  --   update_cwd = true,
+  -- },
   system_open = {
     cmd = nil,
     args = {},
