@@ -35,10 +35,10 @@ nvim_tree.setup({
       error = "",
     },
   },
-  -- update_focused_file = {
-  --   enable = true,
-  --   update_cwd = true,
-  -- },
+  update_focused_file = {
+    enable = true,
+    update_cwd = true,
+  },
   system_open = {
     cmd = nil,
     args = {},
