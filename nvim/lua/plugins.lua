@@ -86,11 +86,13 @@ packer.startup({ function(use)
     commit = "b2446100d9f6609526cf1839b4ce3dc1ff07ada0"
 
   }
+  -- Navigation tree
   use {
     'kyazdani42/nvim-tree.lua',
+    -- lock = true, -- Locked because I am using a custom version of the plugin
+    commit="bdb6d4a25410da35bbf7ce0dbdaa8d60432bc243",
     requires = {
       'kyazdani42/nvim-web-devicons', -- optional, for file icons
     },
-    tag = 'nightly' -- optional, updated every week. (see issue #1193)
-  } -- Navigation tree
+  }
 end })
