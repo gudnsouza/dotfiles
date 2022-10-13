@@ -1,5 +1,6 @@
+# Fig pre block. Keep at the top of this file.
+[[ -f "$HOME/.fig/shell/zshrc.pre.zsh" ]] && builtin source "$HOME/.fig/shell/zshrc.pre.zsh"
 #cd code/top-seller//gerencie-frontend/ Fig pre block. Keep at the top of this file.
-[[ -f "$HOME/.fig/shell/zshrc.pre.zsh" ]] && . "$HOME/.fig/shell/zshrc.pre.zsh"
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
 # Initialization code that may require console input (password prompts, [y/n]
 # confirmations, etc.) must go above this block; everything else may go below.
@@ -169,8 +170,7 @@ function parse_git_dirty() {
   local STATUS
   local -a FLAGS
   FLAGS=('--porcelain')
-  if [[ "$(__git_prompt_git config --get oh-my-zsh.hide-dirty)" != "1" ]]; then
-    if [[ "${DISABLE_UNTRACKED_FILES_DIRTY:-}" == "true" ]]; then
+  if [[ "$(__git_prompt_git config --get oh-my-zsh.hide-dirty)" != "1" ]]; then if [[ "${DISABLE_UNTRACKED_FILES_DIRTY:-}" == "true" ]]; then
       FLAGS+='--untracked-files=no'
     fi
     case "${GIT_STATUS_IGNORE_SUBMODULES:-}" in
@@ -203,13 +203,23 @@ function git_branch_name()
     echo "${ZSH_THEME_GIT_PROMPT_PREFIX}$branch $(parse_git_dirty)${ZSH_THEME_GIT_PROMPT_SUFFIX}"
   fi
 }
-PROMPT="%{$fg_bold[blue]%}[%{$fg_bold[white]%}gusta%{$fg_bold[red]%}@%{$fg_bold[white]%}mac%{$fg_bold[blue]%}] %(?:%{$fg_bold[green]%}➜:%{$fg_bold[red]%}➜)"
-PROMPT+=' %{$fg[cyan]%}%c%{$reset_color%} $(git_branch_name)'
+prompt_end() {
+  if [[ -n $CURRENT_BG ]]; then
+    echo -n " %{%k%F{$CURRENT_BG}%}$SEGMENT_SEPARATOR"
+  else
+    echo -n "%{%k%}"
+  fi
+  echo -n " \n%(?:%{$fg_bold[green]%}➜:%{$fg_bold[red]%}➜) %{%f%}"
+  CURRENT_BG=''
+}
+PROMPT="%{$fg_bold[white]%}gusta %{$fg_bold[red]%}@"
+PROMPT+=' %{$fg[cyan]%}%c%{$reset_color%} $(git_branch_name) $(prompt_end)'
+# %{$fg[cyan]%}%c%{$reset_color%}
 
 ZSH_THEME_GIT_PROMPT_PREFIX="%{$fg_bold[white]%}on %{$fg_bold[blue]%} "
 ZSH_THEME_GIT_PROMPT_SUFFIX="%{$reset_color%}"
 ZSH_THEME_GIT_PROMPT_DIRTY="%{$fg[yellow]%}✗ "
 ZSH_THEME_GIT_PROMPT_CLEAN=""
-# Fig post block. Keep at the bottom of this file.
-[[ -f "$HOME/.fig/shell/zshrc.post.zsh" ]] && . "$HOME/.fig/shell/zshrc.post.zsh"
 
+# Fig post block. Keep at the bottom of this file.
+[[ -f "$HOME/.fig/shell/zshrc.post.zsh" ]] && builtin source "$HOME/.fig/shell/zshrc.post.zsh"
