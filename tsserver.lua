@@ -23,7 +23,7 @@ local function filter(arr, fn)
 end
 
 local function filterReactDTS(value)
-  return string.match(value.uri, '%.d.ts') == nil
+  return string.match(value.targetUri, '%.d.ts') == nil
 end
 
 return {
@@ -56,19 +56,15 @@ return {
   docs = {
     description = [[
 https://github.com/theia-ide/typescript-language-server
-
 `typescript-language-server` depends on `typescript`. Both packages can be installed via `npm`:
 ```sh
 npm install -g typescript typescript-language-server
 ```
-
 To configure type language server, add a
 [`tsconfig.json`](https://www.typescriptlang.org/docs/handbook/tsconfig-json.html) or
 [`jsconfig.json`](https://code.visualstudio.com/docs/languages/jsconfig) to the root of your
 project.
-
 Here's an example that disables type checking in JavaScript files.
-
 ```json
 {
   "compilerOptions": {
