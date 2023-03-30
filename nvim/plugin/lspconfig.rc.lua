@@ -116,12 +116,18 @@ local capabilities = require('cmp_nvim_lsp').update_capabilities(
 --   on_attach = on_attach,
 --   capabilities = capabilities
 -- }
+capabilities.textDocument.foldingRange = {
+  dynamicRegistration = false,
+  lineFoldingOnly = true,
+}
+
+require('ufo').setup()
 
 nvim_lsp.marksman.setup {}
 
 nvim_lsp.tsserver.setup {
   on_attach = on_attach,
-  filetypes = { "typescript", "javascript", "typescriptreact", "typescript.tsx" },
+  filetypes = { "typescript", "javascript", "javascriptreact", "typescriptreact", "typescript.tsx", "javascript.jsx" },
   -- cmd = { "typescript-language-server", "--stdio" },
   capabilities = capabilities
 }
@@ -153,6 +159,9 @@ nvim_lsp.sumneko_lua.setup {
 nvim_lsp.tailwindcss.setup {}
 
 nvim_lsp.prismals.setup {}
+
+nvim_lsp.graphql.setup {}
+
 
 
 

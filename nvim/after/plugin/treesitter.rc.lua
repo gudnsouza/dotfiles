@@ -5,6 +5,10 @@ ts.setup {
   highlight = {
     enable = true,
     disable = {},
+
+  },
+  folding = {
+    enable = true
   },
   indent = {
     enable = true,
@@ -19,6 +23,7 @@ ts.setup {
     "fish",
     "php",
     "json",
+    "graphql",
     "yaml",
     "swift",
     "css",
@@ -41,4 +46,4 @@ ts.setup {
 }
 
 local parser_config = require "nvim-treesitter.parsers".get_parser_configs()
-parser_config.tsx.filetype_to_parsername = { "javascript", "typescript.tsx", "typescript", "typescriptreact" }
+parser_config.tsx.filetype_to_parsername = { "javascript", "typescript.tsx", "typescript", "javascript.jsx", "typescriptreact", "graphql" }

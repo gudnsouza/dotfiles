@@ -16,6 +16,10 @@ end
 
 packer.startup({ function(use)
   use 'wbthomason/packer.nvim' -- Plugin manager
+  use {
+  "kevinhwang91/nvim-ufo",
+  requires = "kevinhwang91/promise-async",
+}
   use 'hoob3rt/lualine.nvim' --Statusline use 'onsails/lspkind-nvim' -- vscode-like pictograms
   use 'hrsh7th/cmp-buffer' -- nvim-cmp source for buffer words
   use 'L3MON4D3/LuaSnip'

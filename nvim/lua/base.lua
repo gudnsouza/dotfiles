@@ -1,8 +1,10 @@
 vim.opt.encoding = 'utf-8'
 vim.opt.fileencoding = 'utf-8'
-
+vim.opt.foldcolumn = '1' -- '0' is not bad
+vim.opt.foldlevel = 99 -- Using ufo provider need a large value, feel free to decrease the value
+vim.opt.foldlevelstart = 99
+vim.opt.foldenable = true
 vim.wo.number = true
-
 vim.opt.showmode = false
 vim.opt.termguicolors = true
 vim.opt.title = true
@@ -35,13 +37,9 @@ vim.opt.wildignore:append { '*/node_modules/*' }
 vim.opt.signcolumn = "yes" -- always show the sign column, otherwise it would shift the text each time
 vim.g.mapleader = " "
 -- Undercurl
-vim.cmd("hi Normal ctermbg=none guibg=none")
-
-
-
-
-vim.cmd([[let &t_Cs = "\e[4:3m"]])
-vim.cmd([[let &t_Ce = "\e[4:0m"]])
+-- vim.cmd("hi Normal ctermbg=none guibg=none")
+-- vim.cmd([[let &t_Cs = "\e[4:3m"]])
+-- vim.cmd([[let &t_Ce = "\e[4:0m"]])
 -- but this doesn't work on iTerm2 right now
 
 -- Turn off paste mode when leaving insert
@@ -53,8 +51,6 @@ vim.api.nvim_create_autocmd("InsertLeave", {
 vim.cmd([[colorscheme gruvbox]])
 
 vim.api.nvim_command("setlocal formatoptions-=c formatoptions-=r formatoptions-=o");
-
-
 vim.opt.shortmess:append "c" -- don't show redundant messages from ins-completion-menu
 vim.opt.shortmess:append "I" -- don't show the default intro message
 vim.opt.whichwrap:append "<,>,[,],h,l"

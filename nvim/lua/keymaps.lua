@@ -7,6 +7,8 @@ keymap.set('n', 'x', '"_x', opts)
 keymap.set('n', '+', '<C-a>', opts)
 keymap.set('n', '-', '<C-x>', opts)
 keymap.set({ 'n', 'v' }, '$', 'g_', { desc = 'Better $, behaves as expected' })
+keymap.set('n', 'zR', require('ufo').openAllFolds, opts)
+keymap.set('n', 'zM', require('ufo').closeAllFolds, opts)
 
 -- Select all
 keymap.set('n', '<C-a>', 'gg<S-v>G', opts)
