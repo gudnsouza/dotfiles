@@ -44,6 +44,11 @@ ts.setup {
 
 
 }
+require('ufo').setup({
+    provider_selector = function(bufnr, filetype, buftype)
+        return {'treesitter', 'indent'}
+    end
+})
 
 local parser_config = require "nvim-treesitter.parsers".get_parser_configs()
 parser_config.tsx.filetype_to_parsername = { "javascript", "typescript.tsx", "typescript", "javascript.jsx", "typescriptreact", "graphql" }
