@@ -20,19 +20,24 @@ packer.startup({ function(use)
   "kevinhwang91/nvim-ufo",
   requires = "kevinhwang91/promise-async",
 }
+  use { "catppuccin/nvim", as = "catppuccin" }
+  use {"sainnhe/everforest", as = "everforest"}
   use 'hoob3rt/lualine.nvim' --Statusline use 'onsails/lspkind-nvim' -- vscode-like pictograms
   use 'hrsh7th/cmp-buffer' -- nvim-cmp source for buffer words
   use 'L3MON4D3/LuaSnip'
   use 'hrsh7th/cmp-nvim-lsp' -- nvim-cmp source for neovim's built-in LSP
+  use {
+        'nvim-treesitter/nvim-treesitter',
+        run = function()
+            local ts_update = require('nvim-treesitter.install').update({ with_sync = true })
+            ts_update()
+        end,
+    }
   use 'hrsh7th/nvim-cmp'
   use 'neovim/nvim-lspconfig' -- LSP
   use 'williamboman/mason.nvim' -- LspInstall
   use 'williamboman/mason-lspconfig.nvim' -- LspInstall
   use 'akinsho/nvim-bufferline.lua' -- Bufferline lol
-  use {
-    'nvim-treesitter/nvim-treesitter',
-    run = ':TSUpdate'
-  } -- Syntax highlighting
   use {
     "ahmedkhalf/project.nvim",
     config = function()

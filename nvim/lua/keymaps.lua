@@ -50,7 +50,7 @@ keymap.set('n', '<leader>c', ":bd<Return>", opts)
 keymap.set('n', '<leader>q', ":qa<Return>", opts)
 
 -- Saving on insert mode
-keymap.set('n', '<C-s>', ':w<Return>', opts)
+keymap.set('n', '<C-s>', ':w!<Return>', opts)
 keymap.set('i', '<C-s>', '<Esc>:w<Return>', opts)
 
 -- Telescope projects

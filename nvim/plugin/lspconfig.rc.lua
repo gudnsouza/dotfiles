@@ -109,7 +109,7 @@ protocol.CompletionItemKind = {
 }
 
 -- Set up completion using nvim_cmp with LSP source
-local capabilities = require('cmp_nvim_lsp').update_capabilities(
+local capabilities = require('cmp_nvim_lsp').default_capabilities(
   vim.lsp.protocol.make_client_capabilities()
 )
 -- nvim_lsp.flow.setup {
@@ -168,7 +168,7 @@ nvim_lsp.graphql.setup {}
 vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(
   vim.lsp.diagnostic.on_publish_diagnostics, {
   underline = true,
-  update_in_insert = false,
+  default_in_insert = false,
   virtual_text = { spacing = 4, prefix = "●" },
   severity_sort = true,
 }
@@ -185,7 +185,7 @@ vim.diagnostic.config({
   virtual_text = {
     prefix = '●'
   },
-  update_in_insert = true,
+  default_in_insert = true,
   float = {
     source = "always", -- Or "if_many"
   },

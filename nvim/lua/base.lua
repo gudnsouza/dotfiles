@@ -48,7 +48,16 @@ vim.api.nvim_create_autocmd("InsertLeave", {
   command = "set nopaste"
 })
 
-vim.cmd([[colorscheme gruvbox]])
+-- vim.cmd([[colorscheme gruvbox]])
+
+-- setup must be called before loading
+
+vim.g.catppuccin_flavour = "latte" -- latte, frappe, macchiato, mocha
+
+require("catppuccin").setup()
+
+vim.cmd [[colorscheme catppuccin]]
+
 
 vim.api.nvim_command("setlocal formatoptions-=c formatoptions-=r formatoptions-=o");
 vim.opt.shortmess:append "c" -- don't show redundant messages from ins-completion-menu
