@@ -16,16 +16,35 @@ end
 
 packer.startup({ function(use)
   use 'wbthomason/packer.nvim' -- Plugin manager
+  use { "catppuccin/nvim", as = "catppuccin" }
+  use {"sainnhe/everforest", as = "everforest"}
   use {
   "kevinhwang91/nvim-ufo",
   requires = "kevinhwang91/promise-async",
 }
-  use { "catppuccin/nvim", as = "catppuccin" }
-  use {"sainnhe/everforest", as = "everforest"}
-  use 'hoob3rt/lualine.nvim' --Statusline use 'onsails/lspkind-nvim' -- vscode-like pictograms
-  use 'hrsh7th/cmp-buffer' -- nvim-cmp source for buffer words
-  use 'L3MON4D3/LuaSnip'
-  use 'hrsh7th/cmp-nvim-lsp' -- nvim-cmp source for neovim's built-in LSP
+  use {
+	  'VonHeikemen/lsp-zero.nvim',
+	  branch = 'v1.x',
+	  requires = {
+		  -- LSP Support
+		  {'neovim/nvim-lspconfig'},
+		  {'williamboman/mason.nvim'},
+		  {'williamboman/mason-lspconfig.nvim'},
+
+		  -- Autocompletion
+		  {'hrsh7th/nvim-cmp'},
+		  {'hrsh7th/cmp-buffer'},
+		  {'hrsh7th/cmp-path'},
+		  {'saadparwaiz1/cmp_luasnip'},
+		  {'hrsh7th/cmp-nvim-lsp'},
+		  {'hrsh7th/cmp-nvim-lua'},
+
+		  -- Snippets
+		  {'L3MON4D3/LuaSnip'},
+		  {'rafamadriz/friendly-snippets'},
+	  }
+  }
+  use 'hoob3rt/lualine.nvim' 
   use {
         'nvim-treesitter/nvim-treesitter',
         run = function()
@@ -33,18 +52,11 @@ packer.startup({ function(use)
             ts_update()
         end,
     }
-  use 'hrsh7th/nvim-cmp'
-  use 'neovim/nvim-lspconfig' -- LSP
-  use 'williamboman/mason.nvim' -- LspInstall
-  use 'williamboman/mason-lspconfig.nvim' -- LspInstall
   use 'akinsho/nvim-bufferline.lua' -- Bufferline lol
   use {
     "ahmedkhalf/project.nvim",
     config = function()
       require("project_nvim").setup {
-        -- your configuration comes here
-        -- or leave it empty to use the default settings
-        -- refer to the configuration section below
       }
     end
   } -- Project selection through telescope
@@ -58,26 +70,6 @@ packer.startup({ function(use)
       require('Comment').setup()
     end
   } -- Commenting
-  -- use 'github/copilot.vim'
-  use { 'saadparwaiz1/cmp_luasnip' }
-  -- use {
-  --   "zbirenbaum/copilot.lua",
-  --   event = { "VimEnter" },
-  --   config = function()
-  --     vim.defer_fn(function()
-  --       require("copilot").setup({
-  --         cmp = {
-  --           enabled = true,
-  --           method = "getCompletionsCycling",
-  --         }
-  --       })
-  --     end, 100)
-  --   end,
-  -- } -- Lua engine for copilot
-  -- use {
-  --   "zbirenbaum/copilot-cmp",
-  --   module = "copilot_cmp",
-  -- } -- Make copilot suggestions appear on nvim-vmp
   use 'jose-elias-alvarez/null-ls.nvim'
   use 'kabouzeid/nvim-lspinstall'
   use 'nvim-lua/plenary.nvim' -- Common lua utilities
@@ -90,11 +82,6 @@ packer.startup({ function(use)
     requires = { 'tjdevries/colorbuddy.nvim' }
   } -- Takuya's favorite colorscheme
   use 'gruvbox-community/gruvbox' -- Gruvbox colorscheme
-  use {
-    "rafamadriz/friendly-snippets",
-    commit = "b2446100d9f6609526cf1839b4ce3dc1ff07ada0"
-
-  }
   -- Navigation tree
   use {
     'kyazdani42/nvim-tree.lua',
