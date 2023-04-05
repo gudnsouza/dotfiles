@@ -18,6 +18,7 @@ packer.startup({ function(use)
   use 'wbthomason/packer.nvim' -- Plugin manager
   use { "catppuccin/nvim", as = "catppuccin" }
   use {"sainnhe/everforest", as = "everforest"}
+  use { 'mhartington/formatter.nvim', as = "formatter" }
   use {
   "kevinhwang91/nvim-ufo",
   requires = "kevinhwang91/promise-async",
@@ -70,7 +71,6 @@ packer.startup({ function(use)
       require('Comment').setup()
     end
   } -- Commenting
-  use 'jose-elias-alvarez/null-ls.nvim'
   use 'kabouzeid/nvim-lspinstall'
   use 'nvim-lua/plenary.nvim' -- Common lua utilities
   use 'JoosepAlviste/nvim-ts-context-commentstring' -- Needed to make multi line commenting work on React code
