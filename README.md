@@ -1,5 +1,5 @@
 # TODO
-- [ ] Find out how to move multiple files with nvim-tree
-- [ ] Make nvim-tree change to new project when using telescope-project
-- [ ] Make lsp work with js files
- 
+
+- [ ] Make eslint work with lsp
+- [ ] Fix the error happening when I try to autocomplete (tab) in a word without suggestions
+- [ ] Go back to using copilot
