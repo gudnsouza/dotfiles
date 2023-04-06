@@ -24,6 +24,8 @@ ts.setup {
     "php",
     "json",
     "graphql",
+    "markdown",
+    "markdown_inline",
     "yaml",
     "swift",
     "css",

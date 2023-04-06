@@ -17,6 +17,8 @@ end
 packer.startup({ function(use)
   use 'wbthomason/packer.nvim' -- Plugin manager
   use { "catppuccin/nvim", as = "catppuccin" }
+  use {"nvim-tree/nvim-web-devicons"}
+  use 'glepnir/lspsaga.nvim' -- LSP UIs
   use {"sainnhe/everforest", as = "everforest"}
   use { 'mhartington/formatter.nvim', as = "formatter" }
   use {
@@ -45,7 +47,6 @@ packer.startup({ function(use)
 		  {'rafamadriz/friendly-snippets'},
 	  }
   }
-  use 'hoob3rt/lualine.nvim' 
   use {
         'nvim-treesitter/nvim-treesitter',
         run = function()

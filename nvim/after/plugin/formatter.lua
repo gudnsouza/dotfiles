@@ -23,7 +23,7 @@ require('formatter').setup {
     html = { require 'formatter.defaults.prettierd' },
     css = { require 'formatter.defaults.prettierd' },
     svg = { require 'formatter.defaults.prettierd' },
-    lua = { require('formatter.filetypes.lua').stylua },
+    lua = { require 'formatter.defaults.prettierd' },
     rust = { require('formatter.filetypes.rust').rustfmt },
     ['*'] = { require('formatter.filetypes.any').remove_trailing_whitespace },
   },
