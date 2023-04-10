@@ -1,36 +1,31 @@
-
 local lsp = require("lsp-zero").preset({})
 
-
 lsp.ensure_installed({
-  'tsserver',
-  'eslint',
-  'rust_analyzer',
-  'tailwindcss'
+	"tsserver",
+	"eslint",
+	"rust_analyzer",
+	"tailwindcss",
 })
-
-
 
 -- Fix Undefined global 'vim'
-lsp.configure('lua-language-server', {
-    settings = {
-        Lua = {
-            diagnostics = {
-                globals = { 'vim' }
-            }
-        }
-    }
+lsp.configure("lua-language-server", {
+	settings = {
+		Lua = {
+			diagnostics = {
+				globals = { "vim" },
+			},
+		},
+	},
 })
 
-
 lsp.set_preferences({
-    suggest_lsp_servers = false,
-    sign_icons = {
-        error = 'E',
-        warn = 'W',
-        hint = 'H',
-        info = 'I'
-    }
+	suggest_lsp_servers = false,
+	sign_icons = {
+		error = "E",
+		warn = "W",
+		hint = "H",
+		info = "I",
+	},
 })
 
 -- lsp.on_attach(function(client, bufnr)
@@ -46,9 +41,8 @@ lsp.set_preferences({
 --
 -- end)
 
-
 lsp.setup()
 
 vim.diagnostic.config({
-    virtual_text = true
+	virtual_text = true,
 })
