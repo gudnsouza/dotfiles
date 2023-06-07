@@ -12,6 +12,7 @@ require("formatter").setup({
 	filetype = {
 		r = { rfmt },
 		javascriptreact = { require("formatter.defaults.prettierd") },
+		python = { require("formatter.filetypes.python") },
 		javascript = { require("formatter.defaults.prettierd") },
 		typescriptreact = { require("formatter.defaults.prettierd") },
 		typescript = { require("formatter.defaults.prettierd") },

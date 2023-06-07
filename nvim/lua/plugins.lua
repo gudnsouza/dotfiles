@@ -16,12 +16,13 @@ end
 
 packer.startup({
 	function(use)
-		use("wbthomason/packer.nvim") -- Plugin manager
-		use({ "nvim-lualine/lualine.nvim" })
 		use({ "catppuccin/nvim", as = "catppuccin" })
 		use({ "nvim-tree/nvim-web-devicons" })
-		use("glepnir/lspsaga.nvim") -- LSP UIs
+		use("wbthomason/packer.nvim") -- Plugin manager
 		use({ "sainnhe/everforest", as = "everforest" })
+		use({ "nvim-lualine/lualine.nvim" })
+
+		use("glepnir/lspsaga.nvim") -- LSP UIs
 		use({ "mhartington/formatter.nvim", as = "formatter" })
 		use({
 			"kevinhwang91/nvim-ufo",

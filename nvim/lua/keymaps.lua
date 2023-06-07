@@ -43,8 +43,6 @@ keymap.set('n', '<C-w><down>', '<C-w>-', opts)
 -- Toggle NvimTree
 keymap.set('n', '<leader>e', ":NvimTreeToggle<cr>", opts)
 
--- Yanking whole line
-
 -- Closing buffers and vim
 keymap.set('n', '<leader>c', ":bd<Return>", opts)
 keymap.set('n', '<leader>q', ":qa<Return>", opts)
