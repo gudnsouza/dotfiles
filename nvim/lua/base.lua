@@ -1,6 +1,6 @@
-vim.opt.encoding = 'utf-8'
-vim.opt.fileencoding = 'utf-8'
-vim.opt.foldcolumn = '1' -- '0' is not bad
+vim.opt.encoding = "utf-8"
+vim.opt.fileencoding = "utf-8"
+vim.opt.foldcolumn = "1" -- '0' is not bad
 vim.opt.foldlevel = 99 -- Using ufo provider need a large value, feel free to decrease the value
 vim.opt.foldlevelstart = 99
 vim.opt.foldenable = true
@@ -19,8 +19,8 @@ vim.opt.expandtab = true
 vim.opt.undofile = true
 vim.opt.scrolloff = 10
 vim.opt.confirm = false
-vim.opt.backupskip = '/tmp/*,/private/tmp/*'
-vim.opt.inccommand = 'split'
+vim.opt.backupskip = "/tmp/*,/private/tmp/*"
+vim.opt.inccommand = "split"
 vim.opt.ignorecase = true
 vim.opt.smarttab = true
 vim.opt.breakindent = true
@@ -29,10 +29,10 @@ vim.opt.tabstop = 2
 vim.opt.ai = true
 vim.opt.si = true
 vim.opt.wrap = false
-vim.opt.backspace = 'start,eol,indent'
+vim.opt.backspace = "start,eol,indent"
 vim.opt.fillchars = "eob: "
-vim.opt.path:append { '**' }
-vim.opt.wildignore:append { '*/node_modules/*' }
+vim.opt.path:append({ "**" })
+vim.opt.wildignore:append({ "*/node_modules/*" })
 -- vim.opt.updatetime = 300 In case I want to use FixCursorHold
 vim.opt.signcolumn = "yes" -- always show the sign column, otherwise it would shift the text each time
 vim.g.mapleader = " "
@@ -44,23 +44,22 @@ vim.g.mapleader = " "
 
 -- Turn off paste mode when leaving insert
 vim.api.nvim_create_autocmd("InsertLeave", {
-  pattern = "*",
-  command = "set nopaste"
+	pattern = "*",
+	command = "set nopaste",
 })
 
 -- vim.cmd([[colorscheme gruvbox]])
 
 -- setup must be called before loading
+--
+-- vim.g.catppuccin_flavour = "macchiato" -- latte, frappe, macchiato, mocha
+--
+-- require("catppuccin").setup()
+--
+-- vim.cmd([[colorscheme catppuccin]])
 
-vim.g.catppuccin_flavour = "latte" -- latte, frappe, macchiato, mocha
-
-require("catppuccin").setup()
-
-vim.cmd [[colorscheme catppuccin]]
-
-
-vim.api.nvim_command("setlocal formatoptions-=c formatoptions-=r formatoptions-=o");
-vim.opt.shortmess:append "c" -- don't show redundant messages from ins-completion-menu
-vim.opt.shortmess:append "I" -- don't show the default intro message
-vim.opt.whichwrap:append "<,>,[,],h,l"
-vim.opt.formatoptions:append { 'r' }
+vim.api.nvim_command("setlocal formatoptions-=c formatoptions-=r formatoptions-=o")
+vim.opt.shortmess:append("c") -- don't show redundant messages from ins-completion-menu
+vim.opt.shortmess:append("I") -- don't show the default intro message
+vim.opt.whichwrap:append("<,>,[,],h,l")
+vim.opt.formatoptions:append({ "r" })

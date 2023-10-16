@@ -21,8 +21,11 @@ packer.startup({
 		use("wbthomason/packer.nvim") -- Plugin manager
 		use({ "sainnhe/everforest", as = "everforest" })
 		use({ "nvim-lualine/lualine.nvim" })
+		use({
+			"nvimdev/lspsaga.nvim",
+			after = "nvim-lspconfig",
+		})
 
-		use("glepnir/lspsaga.nvim") -- LSP UIs
 		use({ "mhartington/formatter.nvim", as = "formatter" })
 		use({
 			"kevinhwang91/nvim-ufo",
