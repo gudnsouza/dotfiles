@@ -54,6 +54,9 @@ keymap.set("i", "<C-s>", "<Esc>:w<Return>", opts)
 keymap.set("n", "<leader><S-p>", ":Telescope projects<CR>", opts)
 keymap.set("n", "<leader>st", ":Telescope live_grep<CR>", opts)
 
+-- Telescope
+keymap.set("n", "<leader>fi", ":Telescope grep_string<CR>", opts)
+
 -- Bufferline
 keymap.set("n", "<leader>bh", ":BufferLineCloseLeft<CR>", opts)
 keymap.set("n", "<leader>bl", ":BufferLineCloseRight<CR>", opts)
@@ -62,23 +65,5 @@ keymap.set("n", "<leader>bl", ":BufferLineCloseRight<CR>", opts)
 keymap.set("n", "<leader>/", "<ESC><CMD>lua require('Comment.api').toggle_linewise_op()<CR>", opts)
 keymap.set("v", "<leader>/", "<ESC><CMD>lua require('Comment.api').toggle_linewise_op(vim.fn.visualmode())<CR>", opts)
 
--- keymap.set("n", "<leader>lr", vim.lsp.buf.rename, opts)
-keymap.set("n", "<leader>vrr", function()
-	vim.lsp.buf.references()
-end, opts)
-
--- keymap.set("n", "<C-j>", vim.diagnostic.goto_next, opts)
--- keymap.set("n", "<C-k>", vim.diagnostic.goto_prev, opts)
-
--- LSP
--- keymap.set('n', 'gd', vim.lsp.buf.definition, opts)
--- keymap.set('n', 'K', vim.lsp.buf.hover, opts)
--- keymap.set('n', 'gl', vim.diagnostic.open_float, opts)
 -- Lspsaga
--- keymap.set('n', '<C-j>', '<Cmd>Lspsaga diagnostic_jump_next<CR>', opts)
--- keymap.set("n", "gs", "<Cmd>Lspsaga signature_help<CR>", { silent = true })
--- keymap.set('n', 'K', '<Cmd>Lspsaga hover_doc<CR>', opts)
--- keymap.set('n', 'gd', '<Cmd>Lspsaga lsp_finder<CR>', opts)
--- keymap.set('n', 'gp', '<Cmd>Lspsaga preview_definition<CR>', opts)
--- keymap.set('n', 'gr', '<Cmd>Lspsaga rename<CR>', opts)
--- keymap.set("n", "gl", "<cmd>Lspsaga show_line_diagnostics<CR>", { silent = true })
+keymap.set("n", "<leader>vrr", ":Lspsaga finder<CR>", opts)

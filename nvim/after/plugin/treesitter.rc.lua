@@ -46,11 +46,6 @@ ts.setup({
 		max_file_lines = 1000, -- Do not enable for files with more than 1000 lines, int
 	},
 })
-require("ufo").setup({
-	provider_selector = function(bufnr, filetype, buftype)
-		return { "treesitter", "indent" }
-	end,
-})
 
 local parser_config = require("nvim-treesitter.parsers").get_parser_configs()
 parser_config.tsx.filetype_to_parsername =

@@ -28,6 +28,21 @@ lsp.set_preferences({
 	},
 })
 
+lsp.on_attach(function(client, bufnr)
+	lsp.default_keymaps({ buffer = bufnr })
+end)
+
+lsp.set_server_config({
+	capabilities = {
+		textDocument = {
+			foldingRange = {
+				dynamicRegistration = false,
+				lineFoldingOnly = true,
+			},
+		},
+	},
+})
+
 -- lsp.on_attach(function(client, bufnr)
 --   local opts = {buffer = bufnr, remap = false}
 --

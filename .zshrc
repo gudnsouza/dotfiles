@@ -8,11 +8,57 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
+if command -v tmux &> /dev/null && [ -n "$PS1" ] && [[ ! "$TERM" =~ screen ]] && [[ ! "$TERM" =~ tmux ]] && [ -z "$TMUX" ]; then
+  exec tmux new -As0
+fi
+
+# Path Variables
+export TERM='xterm-256color'
+export EDITOR='nvim'
+export VISUAL='nvim'
+
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
 export ZSH="/Users/gustavodonascimentosouza/.oh-my-zsh"
+export GITHUB_TOKEN=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
+
+go() {
+  if [[ -z $* ]]; then
+    echo "Please provide a commit message."
+    return 1
+  fi
+
+  message="$*"
+
+  echo "Running git add ."
+  git add .
+
+  echo "Running git commit -m '$message'"
+  git commit -m "$message"
+
+  echo "Running git push"
+  git push
+}
+
+topseller() {
+  if [[ -z $1 ]]; then
+    echo "Please provide a message."
+    return 1
+  fi
+
+  destination="$HOME/Code/top-seller/$*"
+
+  if [ ! -d "$destination" ]; then
+    echo "Directory $destination does not exist."
+    return 1
+  fi
+
+  echo "Navigating to $destination"
+  cd "$destination"
+}
+
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
@@ -20,7 +66,6 @@ export ZSH="/Users/gustavodonascimentosouza/.oh-my-zsh"
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
 # ZSH_THEME="powerlevel10k/powerlevel10k"
 ZSH_THEME="robbyrussell"
-
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
 # a theme from this variable instead of looking in $ZSH/themes/
@@ -82,7 +127,7 @@ ZSH_THEME="robbyrussell"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(git web-search copyfile copybuffer dirhistory)
- 
+
 source $ZSH/oh-my-zsh.sh
 
 # User configuration
@@ -118,6 +163,10 @@ alias src="source ~/.zshrc"
 alias gtv="cd ~/.config/nvim"
 alias gts="cd ~/code/satori"
 alias gtt="cd ~/code/top-seller"
+alias gtc="cd ~/code"
+alias lol="open /Applications/League\ of\ Legends.app/Contents/LoL/LeagueClient.app --args --locale=en_US"
+alias build="pnpm run build"
+alias dev="pnpm run dev"
 
 SPACESHIP_PROMPT_ORDER=(
 #  user          # Username section
@@ -223,3 +272,11 @@ ZSH_THEME_GIT_PROMPT_CLEAN=""
 
 # Fig post block. Keep at the bottom of this file.
 [[ -f "$HOME/.fig/shell/zshrc.post.zsh" ]] && builtin source "$HOME/.fig/shell/zshrc.post.zsh"
+
+# pnpm
+export PNPM_HOME="/Users/gustavodonascimentosouza/Library/pnpm"
+case ":$PATH:" in
+  *":$PNPM_HOME:"*) ;;
+  *) export PATH="$PNPM_HOME:$PATH" ;;
+esac
+# pnpm end
