@@ -18,7 +18,7 @@ saga.setup({
 	ui = {
 		border = "rounded",
 		colors = {
-			normal_bg = "#002b36",
+			-- normal_bg = "#002b36",
 		},
 	},
 	max_width = 0.8,
