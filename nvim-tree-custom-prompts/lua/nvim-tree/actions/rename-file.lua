@@ -7,6 +7,10 @@ local events = require "nvim-tree.events"
 
 local M = {}
 
+function removeLastFileFromPath(path)
+  return path:match "(.*[/\\])"
+end
+
 function M.fn(with_sub)
   return function(node)
     node = lib.get_last_group_node(node)
@@ -19,10 +23,12 @@ function M.fn(with_sub)
 
     local input_opts = { prompt = "Rename to ", default = abs_path, completion = "file" }
 
-    vim.ui.input(input_opts, function(new_file_path)
+    vim.ui.input({ prompt = "Rename to ", completion = "file" }, function(new_file_path)
       if not new_file_path then
         return
       end
+
+      new_file_path = removeLastFileFromPath(node.absolute_path) .. new_file_path
 
       if utils.file_exists(new_file_path) then
         utils.warn "Cannot rename: file already exists"

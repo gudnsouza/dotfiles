@@ -38,10 +38,12 @@ function M.fn(with_sub)
     local input_opts = { prompt = "Rename to ", default = abs_path, completion = "file" }
 
     vim.ui.input(input_opts, function(new_file_path)
+      print "uihsdfuif"
       utils.clear_prompt()
       if not new_file_path then
         return
       end
+      print "here?"
 
       M.rename(node, new_file_path)
       if M.enable_reload then
