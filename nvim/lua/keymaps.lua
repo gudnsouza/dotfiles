@@ -56,10 +56,13 @@ keymap.set("n", "<leader>st", ":Telescope live_grep<CR>", opts)
 
 -- Telescope
 keymap.set("n", "<leader>fi", ":Telescope grep_string<CR>", opts)
+keymap.set("n", "<leader>fr", ":Telescope resume<CR>", opts)
 
 -- Bufferline
 keymap.set("n", "<leader>bh", ":BufferLineCloseLeft<CR>", opts)
 keymap.set("n", "<leader>bl", ":BufferLineCloseRight<CR>", opts)
+keymap.set("n", "<S-l>", "<Cmd>BufferLineCycleNext<CR>", { silent = true })
+keymap.set("n", "<S-h>", "<Cmd>BufferLineCyclePrev<CR>", { silent = true })
 
 -- Comment
 keymap.set("n", "<leader>/", "<ESC><CMD>lua require('Comment.api').toggle_linewise_op()<CR>", opts)
