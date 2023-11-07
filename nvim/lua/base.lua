@@ -1,6 +1,6 @@
 vim.opt.encoding = "utf-8"
 vim.opt.fileencoding = "utf-8"
-vim.opt.foldcolumn = "1" -- '0' is not bad
+vim.opt.foldcolumn = "0"
 vim.opt.foldlevel = 99 -- Using ufo provider need a large value, feel free to decrease the value
 vim.opt.foldlevelstart = 99
 vim.opt.foldenable = true
@@ -12,7 +12,7 @@ vim.opt.relativenumber = true
 vim.opt.autoindent = true
 vim.opt.hlsearch = false
 vim.opt.backup = false
-vim.opt.showcmd = true
+vim.opt.showcmd = false
 vim.opt.cmdheight = 1
 vim.opt.laststatus = 0
 vim.opt.expandtab = true
@@ -59,7 +59,12 @@ vim.api.nvim_create_autocmd("InsertLeave", {
 -- vim.cmd([[colorscheme catppuccin]])
 
 vim.api.nvim_command("setlocal formatoptions-=c formatoptions-=r formatoptions-=o")
-vim.opt.shortmess:append("c") -- don't show redundant messages from ins-completion-menu
-vim.opt.shortmess:append("I") -- don't show the default intro message
+-- vim.opt.shortmess:append("c") -- Do not show completion messages in command line
+-- vim.opt.shortmess:append("F") -- Do not show file info when editing a file, in the command line
+-- vim.opt.shortmess:append("W") -- Do not show "written" in command line when writing
+-- vim.opt.shortmess:append("I") -- Do not show intro message when starting Vim
+
+vim.o.shortmess = vim.o.shortmess .. "c" .. "F" .. "W" .. "I"
+
 vim.opt.whichwrap:append("<,>,[,],h,l")
 vim.opt.formatoptions:append({ "r" })

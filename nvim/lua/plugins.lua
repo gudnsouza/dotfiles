@@ -20,7 +20,6 @@ packer.startup({
 		use({ "nvim-tree/nvim-web-devicons" })
 		use("wbthomason/packer.nvim") -- Plugin manager
 		use({ "sainnhe/everforest", as = "everforest" })
-		use({ "nvim-lualine/lualine.nvim" })
 		use({
 			"nvimdev/lspsaga.nvim",
 			after = "nvim-lspconfig",
