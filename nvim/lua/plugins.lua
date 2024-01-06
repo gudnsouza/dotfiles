@@ -19,6 +19,7 @@ packer.startup({
 		use({ "catppuccin/nvim", as = "catppuccin" })
 		use({ "nvim-tree/nvim-web-devicons" })
 		use("wbthomason/packer.nvim") -- Plugin manager
+		use({ "nvim-lualine/lualine.nvim" })
 		use({ "sainnhe/everforest", as = "everforest" })
 		use({
 			"nvimdev/lspsaga.nvim",

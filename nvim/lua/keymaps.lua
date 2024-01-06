@@ -3,7 +3,7 @@ local opts = { silent = true, noremap = true }
 
 -- Do not yank with X
 keymap.set("n", "x", '"_x', opts)
-keymap.set("x", "p", '"_dP', opts)
+-- keymap.set("x", "p", '"_dP', opts)
 -- Increment/decrement
 keymap.set("n", "+", "<C-a>", opts)
 keymap.set("n", "-", "<C-x>", opts)
@@ -42,7 +42,7 @@ keymap.set("n", "<C-w><up>", "<C-w>+", opts)
 keymap.set("n", "<C-w><down>", "<C-w>-", opts)
 
 -- Toggle nvimtree
-keymap.set("n", "<leader>e", ":NvimTreeToggle<cr>", opts)
+keymap.set("n", "<leader>e", ":NvimTreeResize 30<CR>:NvimTreeToggle<cr>", opts)
 
 -- Closing buffers and vim
 keymap.set("n", "<leader>c", ":bd<Return>", opts)
@@ -77,3 +77,6 @@ keymap.set("n", "gd", "<Cmd>Lspsaga goto_definition<CR>", opts)
 keymap.set("n", "gp", "<Cmd>Lspsaga peek_definition<CR>", opts)
 keymap.set("n", "<leader>lr", "<Cmd>Lspsaga rename<CR>", opts)
 keymap.set("n", "<leader>va", "<Cmd>Lspsaga finder<CR>", opts)
+
+-- Open big tree
+keymap.set("n", "<leader>fe", ":NvimTreeResize 100<CR>:NvimTreeToggle<CR>", opts)
